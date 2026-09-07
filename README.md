@@ -12,7 +12,7 @@ motor face.
 |---|---|
 | **Reduction** | 30:1 |
 | **Tooth profile** | Cycloidal, module 0.55, 60-tooth flexspline / 62-tooth circular spline |
-| **Measured torque** | **not yet measured** — see [Test data](#test-data) |
+| **Measured torque** | **not yet measured**, see [Test data](#test-data) |
 | **Efficiency** | not yet measured |
 | **Backlash** | not yet measured |
 | **Motor** | Any NEMA 17 with a 5 mm shaft (same interface plate as the HD20) |
@@ -52,13 +52,13 @@ New to strain-wave gearing? We wrote a plain-language explainer:
 
 The HD20 got 20:1 out of a 40-tooth flexspline at module 0.8. The HDP30 keeps
 the same two-tooth difference but packs in **60 teeth at module 0.55**, which
-buys half again the reduction at roughly the same pitch diameter — and lets the
+buys half again the reduction at roughly the same pitch diameter, and lets the
 whole stack get thinner, hence *pancake*.
 
 Six parts were re-cut for the new profile: the flexspline, both circular
 splines, the wave generator, the ball cage and the output preloader. The
 **interface plate, the base preloader and the shear pins are unchanged**, and
-so is every piece of hardware — same 11 balls, same 30×42×7 bearing, same 8
+so is every piece of hardware: same 11 balls, same 30×42×7 bearing, same 8
 screws, same 12 inserts. If you have already built an HD20, your leftovers
 cover this one.
 
@@ -82,7 +82,7 @@ is the newer one.
 
 > ⚠️ **Do not print the flexspline in PLA.** It flexes on every single
 > revolution. PLA has almost no fatigue life in that duty and will crack.
-> This matters more here than on the HD20, not less — module 0.55 teeth are
+> This matters more here than on the HD20, not less. Module 0.55 teeth are
 > smaller, and the wall they sit on is thin.
 
 ## Bill of materials
@@ -96,7 +96,7 @@ Machine-readable source: [`bom.json`](bom.json).
 | 3 | 30 × 42 × 7 mm bearing | 1 | 10 | $16.39 | $1.64 |
 | 4 | Set screw | 1 | 50 | $5.69 | $0.11 |
 | 5 | 5 mm steel bearing balls | 11 | 200 | $7.20 | $0.40 |
-| 6 | Super Lube synthetic grease | 1 | — | — | — |
+| 6 | Super Lube synthetic grease | 1 | - | - | - |
 | | | | | **$46.96 buy-in** | **$3.96 each** |
 
 One tube of grease lasts many builds, so it isn't counted in the per-unit cost.
@@ -159,7 +159,7 @@ cloning, because the STEP files are large.
 There are no pre-sliced files in the repo. Import the STEP into your slicer and
 use the print settings above, so the geometry you print is always the current
 one. A convenience 3MF mesh export is attached to the release for slicers that
-won't take STEP — **note that it doesn't include the two shear pins**, which
+won't take STEP. **Note that it doesn't include the two shear pins**, which
 are STEP-only.
 
 ## Assembly
@@ -188,7 +188,7 @@ rather start from ours.
 
 **Change the mechanics.** The full parametric model is public on Onshape:
 
-**[Open the HDP30 in Onshape →](https://cad.onshape.com/documents/319971bd8bd86171560c48e0/w/245bded9ea0f5ce28da60641/e/576f328b49bb8904f021e3ae)**
+**[Open the HDP30 in Onshape →](https://cad.onshape.com/documents/319971bd8bd86171560c48e0/w/245bded9ea0f5ce28da60641/e/576f328b49bb8904f021e3ae?renderMode=0&uiState=6a9f1c9ef8a8e037959edf03)**
 
 Copy it to your own workspace and change what you like: a different motor face,
 a different output interface, a different ratio. If you build a variant, we'd
