@@ -158,9 +158,7 @@ cloning, because the STEP files are large.
 
 There are no pre-sliced files in the repo. Import the STEP into your slicer and
 use the print settings above, so the geometry you print is always the current
-one. A convenience 3MF mesh export is attached to the release for slicers that
-won't take STEP. **Note that it doesn't include the two shear pins**, which
-are STEP-only.
+one.
 
 ## Assembly
 
