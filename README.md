@@ -2,7 +2,7 @@
 
 A strain-wave (harmonic) gearbox that bolts onto a standard NEMA 17 stepper,
 prints on a bog-standard bed slinger, and costs about **$4 of hardware** per
-unit. Half again the reduction of our [HD20](https://github.com/robrotics/hd17)
+unit. Half again the reduction of our [HD20](https://github.com/robrotics/hd20)
 in a thinner package, using the same screws, the same bearing and the same
 motor face.
 
@@ -197,7 +197,7 @@ genuinely like to see it: open an issue or tag
 
 The HDP30 hasn't been characterised yet, so this section is honest about which
 column each item comes from. The material-level items carried over from the
-[HD20](https://github.com/robrotics/hd17) apply to any printed drive of this
+[HD20](https://github.com/robrotics/hd20) apply to any printed drive of this
 family and are worth reading before you build. The performance items are
 **HD20 numbers** and are listed only so you know what kind of behaviour to
 expect, not what to expect from this drive.
