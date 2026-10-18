@@ -1,10 +1,10 @@
 {
-  "$comment": "Source of truth for the HDP30 bill of materials. The website fetches this file and renders the table, so edit it here and the site follows. Costs are pack prices at time of writing; per-unit cost is computed, not stored. The hardware is unchanged from the HD20 (RevA): the mounting interfaces, the 11 ball pockets in the cage and every screw and insert boss are geometrically identical between the two revisions, so the same parts fit.",
+  "$comment": "Source of truth for the HDP30 bill of materials. The website fetches this file and renders the table, so edit it here and the site follows. Costs are pack prices at time of writing; per-unit cost is computed, not stored. The hardware is unchanged from v1.0 (RevB) and from the HD20 (RevA): RevC re-cut the two circular splines for a third shear pin and added a printed alignment tool, but the cage, the interface, both preloaders and the wave generator are geometrically identical to RevB, so the same screws, inserts, balls and bearing fit.",
   "id": "hdp30",
   "name": "HDP30",
-  "version": "1.0",
-  "revision": "RevB",
-  "updated": "2026-09-07",
+  "version": "2.0",
+  "revision": "RevC",
+  "updated": "2026-10-18",
   "currency": "USD",
 
   "affiliateDisclosure": "Links marked as affiliate are Amazon Associates links. If you buy through one, Robrotics earns a small commission at no extra cost to you. It costs you nothing and it doesn't change what we recommend, because every part here is what we actually used.",
@@ -95,16 +95,12 @@
   "consumables": [
     {
       "item": "PLA filament",
-      "note": "Everything except the flexspline, including both shear pins."
-    },
-    {
-      "item": "PETG filament",
-      "note": "Flexspline only. It needs PETG's fatigue resistance, and PLA will crack."
+      "note": "Every printed part, including the flexspline, all three shear pins and the alignment tool. RevC moved the flexspline from PETG to PLA after load-cell testing. Its fatigue life has not been tested yet."
     }
   ],
 
   "openQuestions": [
-    "Torque, efficiency and backlash: no load-cell data exists for this revision yet",
+    "Fatigue life of the PLA flexspline: load-cell tested to about 1.5 N·m on 2026-10-18 (cracking starts there), but not cycled for hours yet",
     "Price of the Super Lube tube, so it can be shown in the table",
     "Insert/set-screw sizes",
     "Assembled weight and outside dimensions"
