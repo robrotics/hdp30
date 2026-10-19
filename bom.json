@@ -2,6 +2,7 @@
   "$comment": "Source of truth for the HDP30 bill of materials. The website fetches this file and renders the table, so edit it here and the site follows. Costs are pack prices at time of writing; per-unit cost is computed, not stored. The hardware is unchanged from v1.0 (RevB) and from the HD20 (RevA): RevC re-cut the two circular splines for a third shear pin and added a printed alignment tool, but the cage, the interface, both preloaders and the wave generator are geometrically identical to RevB, so the same screws, inserts, balls and bearing fit.",
   "id": "hdp30",
   "name": "HDP30",
+  "nickname": "Rinnegan drive",
   "version": "2.0",
   "revision": "RevC",
   "updated": "2026-10-18",
@@ -100,7 +101,7 @@
   ],
 
   "openQuestions": [
-    "Fatigue life of the PLA flexspline: load-cell tested to about 1.5 N·m on 2026-10-18 (cracking starts there), but not cycled for hours yet",
+    "Life of the PLA flexspline beyond 5,744 flex cycles: endurance tested 2026-10-18 with no damage at 1.0-1.2 N·m, cracking from 1.5-1.67 N·m",
     "Price of the Super Lube tube, so it can be shown in the table",
     "Insert/set-screw sizes",
     "Assembled weight and outside dimensions"

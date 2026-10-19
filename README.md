@@ -1,19 +1,21 @@
-# HDP30: a 3D-printable 30:1 pancake harmonic drive actuator
+# The Rinnegan drive (HDP30): a 3D-printable 30:1 pancake harmonic drive actuator
 
-A strain-wave (harmonic) gearbox that bolts onto a standard NEMA 17 stepper,
+The **Rinnegan drive**, aka **HDP30**: a strain-wave (harmonic) gearbox that bolts onto a standard NEMA 17 stepper,
 prints on a bog-standard bed slinger, and costs about **$4 of hardware** per
 unit. Half again the reduction of our [HD20](https://github.com/robrotics/hd20)
 in a thinner package, using the same screws, the same bearing and the same
 motor face.
 
-![The HDP30 assembled on a NEMA 17](photos/hdp30-assembled.jpg)
+![The Rinnegan drive v2.0 assembled on a NEMA 17](photos/rinnegan-revc-assembled.jpg)
 
 | | |
 |---|---|
 | **Reduction** | 30:1 |
 | **Tooth profile** | Cycloidal, module 0.55, 60-tooth flexspline / 62-tooth circular spline |
-| **Measured torque** | Held **1.49 N·m** with no tooth skips. **Cracking starts at about 1.5 N·m**, and the flexspline wall broke at about 2.0 N·m. See [Test data](#test-data) |
-| **Efficiency** | 47-60% static (stalled against a load cell) |
+| **Working limit** | **Keep peaks under about 1.3 N·m.** The flexspline wall starts cracking at 1.5-1.67 N·m |
+| **Measured torque** | Held **1.49 N·m** with no tooth skips. See [Test data](#test-data) |
+| **Endurance** | **5,744 flex cycles** and 188 hard stops at 1.0-1.2 N·m with no damage |
+| **Efficiency** | 47-60% static (stalled against a load cell), across two units |
 | **Backlash** | Too small to measure on our rig: under 0.25° at the output |
 | **Torsional stiffness** | 40 N·m/rad at 0.85 N·m, rising to 61 N·m/rad at 1.5 N·m |
 | **Motor** | Any NEMA 17 with a 5 mm shaft (same interface plate as the HD20) |
@@ -25,16 +27,15 @@ motor face.
 | **Version** | v2.0 (RevC, 2026-10-18) |
 | **License** | [CC BY-SA 4.0](LICENSE) |
 
-> ⚠️ **Treat 1.5 N·m as the ceiling, not a working load.** On the load cell,
-> RevC held 1.49 N·m without skipping a tooth, which is past the point where
-> v1.0 started ratcheting. But at about 1.5 N·m (15 N on our 100 mm test
-> arm) we started hearing the flexspline crack, and at about 2.0 N·m the
-> flexspline wall broke. Set your motor current so the drive can't get there.
+> ⚠️ **Keep peaks under about 1.3 N·m.** In a 41-minute endurance run, one
+> unit took 5,744 flex cycles and 188 hard stops at 1.0-1.2 N·m with no
+> damage and no tooth skips. Then a single 1.67 N·m impact started a crack in
+> the flexspline wall, and it broke twelve hits later. A second unit started
+> cracking at about 1.5 N·m. Impacts count, so avoid slamming hard stops, and
+> on a NEMA 17 like ours limit the motor current to about 0.6 A.
 >
-> ⚠️ **The PLA flexspline has not been fatigue tested.** It flexes twice on
-> every turn of the motor. It survived our load-cell runs, but we haven't run
-> it for hours yet, and PLA is more brittle than the PETG we used before. If
-> you run one for a long time, please
+> ⚠️ **Longer life testing is still to come.** 5,744 cycles is about 40
+> minutes of running. If you run one for a long time, please
 > [open an issue](https://github.com/robrotics/hdp30/issues) and tell us how
 > it held up. We'll credit you.
 
@@ -227,9 +228,17 @@ genuinely like to see it: open an issue or tag
 
 **Measured on this drive:**
 
-- **Cracking starts at about 1.5 N·m.** Past that, the PLA flexspline wall
-  cracks, and it broke outright at about 2.0 N·m. We never saw RevC ratchet,
-  so don't count on v1.0's buzzing as a warning. Limit the motor current.
+- **Cracking starts at 1.5-1.67 N·m.** Past that, the PLA flexspline wall
+  cracks. Once a crack starts, the drive softens and gives way a little more
+  on every hit until the wall breaks. We never saw RevC ratchet, so don't
+  count on v1.0's buzzing as a warning. Limit the motor current.
+- **More current stops buying torque past about 0.8 A.** Held torque levels
+  off near 1.35 N·m, but impacts keep getting harder. About 0.6 A is the
+  sweet spot on a NEMA 17 like ours.
+- **It holds its position unpowered.** With the motor off, it kept about
+  1 N·m on the load cell. It doesn't backdrive at that load.
+- **It softens a little when warm.** After 20 minutes of running it was warm
+  to the touch and about 12% softer.
 - **It twists, but it doesn't rattle.** Expect about 1° of elastic twist at
   the output at 0.85 N·m, and about 1.6° at 1.5 N·m. That's give, not slack.
 - **Torque relaxes a little under a steady hold.** With the motor held still,
@@ -244,8 +253,8 @@ genuinely like to see it: open an issue or tag
 - **Output spline preload is the biggest tuning knob.** On the HD20, tightening
   it further took one unit from 2.37 to 2.55 N·m. Expect it to matter here too.
 
-**Not yet known for this drive:** fatigue life of the PLA flexspline, running
-efficiency under load, thermal behaviour, and long-term wear.
+**Not yet known for this drive:** life beyond a few thousand cycles, running
+efficiency under load, and long-term wear below the cracking limit.
 
 Found something we haven't listed? Please
 [open an issue](https://github.com/robrotics/hdp30/issues) and include your
@@ -254,13 +263,15 @@ version, filament, and printer.
 ## Test data
 
 Tested on 18 October 2026 with a 100 mm arm between two load cells, against a
-no-gearbox baseline of the same motor. The full report, with plots, the method,
-the caveats and the raw CSVs, is at
+no-gearbox baseline of the same motor. A second unit then ran 41 minutes of
+endurance testing at rising current until the flexspline cracked. The full
+report, with plots, the method, the caveats and the raw CSVs, is at
 **[robrotics.web.app/actuators/hdp30-revc-torque-test](https://robrotics.web.app/actuators/hdp30-revc-torque-test)**.
 
 | | v2.0 (RevC) | v1.0 (RevB) |
 |---|---|---|
-| Torque | Held 1.49 N·m, no skips; cracks at ~1.5, broke at ~2.0 | Held 1.47 N·m, then ratcheted |
+| Torque | Held 1.49 N·m, no skips; cracks from 1.5-1.67 | Held 1.47 N·m, then ratcheted |
+| Endurance | 5,744 flex cycles at 1.0-1.2 N·m, no damage | Not tested |
 | Efficiency (static) | 47-60% | 43-55% |
 | Stiffness | 40-61 N·m/rad | 31-44 N·m/rad |
 | Creep in a 2 s hold | about 5% | about 10% |
