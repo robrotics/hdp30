@@ -16,7 +16,7 @@ motor face.
 | **Measured torque** | Held **1.49 N·m** with no tooth skips. See [Test data](#test-data) |
 | **Endurance** | **5,744 flex cycles** and 188 hard stops at 1.0-1.2 N·m with no damage |
 | **Efficiency** | 47-60% static (stalled against a load cell), across two units |
-| **Backlash** | Too small to measure on our rig: under 0.25° at the output |
+| **Backlash** | About 0.03° at the output (2 arcmin); no run of 12 slow runs showed more than about 0.1° |
 | **Torsional stiffness** | 40 N·m/rad at 0.85 N·m, rising to 61 N·m/rad at 1.5 N·m |
 | **Motor** | Any NEMA 17 with a 5 mm shaft (same interface plate as the HD20) |
 | **Lubrication** | Super Lube synthetic PTFE grease |
@@ -240,7 +240,8 @@ genuinely like to see it: open an issue or tag
 - **It softens a little when warm.** After 20 minutes of running it was warm
   to the touch and about 12% softer.
 - **It twists, but it doesn't rattle.** Expect about 1° of elastic twist at
-  the output at 0.85 N·m, and about 1.6° at 1.5 N·m. That's give, not slack.
+  the output at 0.85 N·m, and about 1.6° at 1.5 N·m. That's give, not slack:
+  the actual backlash is only about 0.03° (2 arcmin).
 - **Torque relaxes a little under a steady hold.** With the motor held still,
   output torque dropped about 5% over two seconds and then levelled off.
 
@@ -275,7 +276,7 @@ report, with plots, the method, the caveats and the raw CSVs, is at
 | Efficiency (static) | 47-60% | 43-55% |
 | Stiffness | 40-61 N·m/rad | 31-44 N·m/rad |
 | Creep in a 2 s hold | about 5% | about 10% |
-| Backlash | under 0.25° | under 0.3° |
+| Backlash | about 0.03° (2 arcmin) | under 0.3° (not resolved) |
 
 The v1.0 report is archived at
 [robrotics.web.app/archive/hdp30-revb-torque-test](https://robrotics.web.app/archive/hdp30-revb-torque-test).
