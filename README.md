@@ -6,17 +6,21 @@ unit. Half again the reduction of our [HD20](https://github.com/robrotics/hd20)
 in a thinner package, using the same screws, the same bearing and the same
 motor face.
 
+**Its standout spec is backlash: about 0.03° at the output (roughly 2 arcmin),
+measured on a load-cell rig at 5 RPM.** That's close to what commercial
+strain-wave gearboxes quote, from printed PLA. See [Test data](#test-data).
+
 ![The Rinnegan drive v2.0 assembled on a NEMA 17](photos/rinnegan-revc-assembled.jpg)
 
 | | |
 |---|---|
 | **Reduction** | 30:1 |
+| **Backlash** | About 0.03° at the output (2 arcmin); no run of 12 slow runs showed more than about 0.1° |
 | **Tooth profile** | Cycloidal, module 0.55, 60-tooth flexspline / 62-tooth circular spline |
 | **Working limit** | **Keep peaks under about 1.3 N·m.** The flexspline wall starts cracking at 1.5-1.67 N·m |
 | **Measured torque** | Held **1.49 N·m** with no tooth skips. See [Test data](#test-data) |
 | **Endurance** | **5,744 flex cycles** and 188 hard stops at 1.0-1.2 N·m with no damage |
 | **Efficiency** | 47-60% static (stalled against a load cell), across two units |
-| **Backlash** | About 0.03° at the output (2 arcmin); no run of 12 slow runs showed more than about 0.1° |
 | **Torsional stiffness** | 40 N·m/rad at 0.85 N·m, rising to 61 N·m/rad at 1.5 N·m |
 | **Motor** | Any NEMA 17 with a 5 mm shaft (same interface plate as the HD20) |
 | **Lubrication** | Super Lube synthetic PTFE grease |
@@ -271,12 +275,12 @@ report, with plots, the method, the caveats and the raw CSVs, is at
 
 | | v2.0 (RevC) | v1.0 (RevB) |
 |---|---|---|
+| **Backlash** | about 0.03° (2 arcmin) | under 0.3° (not resolved) |
 | Torque | Held 1.49 N·m, no skips; cracks from 1.5-1.67 | Held 1.47 N·m, then ratcheted |
 | Endurance | 5,744 flex cycles at 1.0-1.2 N·m, no damage | Not tested |
 | Efficiency (static) | 47-60% | 43-55% |
 | Stiffness | 40-61 N·m/rad | 31-44 N·m/rad |
 | Creep in a 2 s hold | about 5% | about 10% |
-| Backlash | about 0.03° (2 arcmin) | under 0.3° (not resolved) |
 
 The v1.0 report is archived at
 [robrotics.web.app/archive/hdp30-revb-torque-test](https://robrotics.web.app/archive/hdp30-revb-torque-test).
