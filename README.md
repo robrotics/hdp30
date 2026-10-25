@@ -177,6 +177,7 @@ No custom temperatures, no special bed prep.
 cad/step/          STEP, for slicing and for CAD work
 cad/dxf/           The four tooth profiles, straight out of the harmonic maker
 photos/            Build photos
+manual/            LEGO-style build manual (PDF), rendered from the STEP files
 bom.json           Bill of materials (source of truth)
 ```
 
@@ -197,13 +198,19 @@ the wave generator down the motor shaft onto it. That puts the wave generator
 at the right height, so the flexspline lines up with both circular splines.
 Tighten the set screw, then take the tool out.
 
+📘 **[LEGO-style build manual (PDF)](manual/hdp30-build-manual.pdf)**: 10
+illustrated steps, every part rendered straight from the RevC CAD, with a
+parts list and a callout for what goes in at each step.
+
+[![Step 3 of the build manual: the flex bearing sub-assembly](manual/hdp30-build-manual-preview.jpg)](manual/hdp30-build-manual.pdf)
+
 📹 **Quick assembly run-through (v1.0):**
 **[instagram.com/reel/DclcvVig55a](https://www.instagram.com/reel/DclcvVig55a/)**
 
 That one is fast, and it predates the alignment tool. A full, properly paced
 build video is in the works and will go up on
 [youtube.com/@robrotics](https://www.youtube.com/@robrotics) and be linked
-here. Written step-by-step instructions are being put together alongside it.
+here.
 
 ## Make your own version
 
