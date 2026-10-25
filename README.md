@@ -26,7 +26,7 @@ strain-wave gearboxes quote, from printed PLA. See [Test data](#test-data).
 | **Lubrication** | Super Lube synthetic PTFE grease |
 | **Printed parts** | 11 pieces across 9 unique parts, including 3 shear pins, plus a printed alignment tool |
 | **Materials** | PLA throughout, **including the flexspline** |
-| **Fasteners** | 8 × M3×0.5 × 6 mm button head screws per drive |
+| **Fasteners** | 8 × M3×0.5 × 6 mm button head screws per drive, motor screws included |
 | **Hardware cost** | ~$3.96 per actuator |
 | **Version** | v2.0 (RevC, 2026-10-18) |
 | **License** | [CC BY-SA 4.0](LICENSE) |
@@ -100,9 +100,6 @@ The HD20 is still the stronger drive. It was tested to 3.3 N·m.
   from the HD20, which was validated with an
   [OMC StepperOnline 17HE12-1204S](https://www.omc-stepperonline.com/e-series-nema-17-bipolar-26ncm-36-82oz-in-1-2a-42x42x30mm-4-wires-w-1m-cable-connector-17he12-1204s)
   (42 × 42 × 30 mm, 26 N·cm, 1.2 A, 4-wire) under closed-loop FOC control.
-- **4 × M3 screws** to bolt the motor to the interface plate. These are
-  separate from the 8 × M3×0.5 × 6 mm screws that hold the drive together,
-  which are in the BOM.
 - A **soldering iron** for the heat-set inserts, and hex keys.
 
 **Filament:** PLA for everything, including the flexspline.
@@ -164,10 +161,10 @@ uses the same settings:
 
 - **Arachne** variable-width wall generator
 - **One extra wall loop** for strength
-- **Seam position: random**, on every part, so a single seam line doesn't stack
-  up into a weak spot or a visible ridge on the round surfaces
-- **Supports on the output circular spline and the interface.** Everything else
-  prints unsupported.
+- **Scarf seam** turned on, so the seam blends in instead of leaving a ridge on
+  the round surfaces
+- **Tree supports on the output circular spline and the interface.** Everything
+  else prints unsupported.
 
 No custom temperatures, no special bed prep.
 
