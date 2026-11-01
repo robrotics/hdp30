@@ -19,9 +19,9 @@ strain-wave gearboxes quote, from printed PLA. See [Test data](#test-data).
 | **Tooth profile** | Cycloidal, module 0.55, 60-tooth flexspline / 62-tooth circular spline |
 | **Working limit** | **Keep peaks under about 1.3 N·m.** The flexspline wall starts cracking at 1.5-1.67 N·m |
 | **Measured torque** | Held **1.49 N·m** with no tooth skips. See [Test data](#test-data) |
-| **Endurance** | **5,744 flex cycles** and 188 hard stops at 1.0-1.2 N·m with no damage |
-| **Efficiency** | 47-60% static (stalled against a load cell), across two units |
-| **Torsional stiffness** | 40 N·m/rad at 0.85 N·m, rising to 61 N·m/rad at 1.5 N·m |
+| **Endurance** | **9,713 flex cycles** and 315 hits at 1.3 N·m with no damage (test stopped by hand) |
+| **Efficiency** | 42-56% static (stalled against a load cell), across three units: 44-56% at 0.4 A, about 42% at 0.6 A |
+| **Torsional stiffness** | 33-43 N·m/rad at low torque across four units, stiffening toward 61 N·m/rad near 1.5 N·m |
 | **Motor** | Any NEMA 17 with a 5 mm shaft (same interface plate as the HD20) |
 | **Lubrication** | Super Lube synthetic PTFE grease |
 | **Printed parts** | 11 pieces across 9 unique parts, including 3 shear pins, plus a printed alignment tool |
@@ -31,14 +31,16 @@ strain-wave gearboxes quote, from printed PLA. See [Test data](#test-data).
 | **Version** | v2.0 (RevC, 2026-10-18) |
 | **License** | [CC BY-SA 4.0](LICENSE) |
 
-> ⚠️ **Keep peaks under about 1.3 N·m.** In a 41-minute endurance run, one
-> unit took 5,744 flex cycles and 188 hard stops at 1.0-1.2 N·m with no
-> damage and no tooth skips. Then a single 1.67 N·m impact started a crack in
-> the flexspline wall, and it broke twelve hits later. A second unit started
-> cracking at about 1.5 N·m. Impacts count, so avoid slamming hard stops, and
+> ⚠️ **Keep peaks under about 1.3 N·m.** Held to that limit, one unit took
+> 9,713 flex cycles and 315 hits with no damage, no tooth skips and no change
+> in stiffness. We stopped the test, not the drive. Another unit took 5,744
+> flex cycles at 1.0-1.2 N·m, then a single 1.67 N·m impact started a crack in
+> the flexspline wall, and it broke twelve hits later. A third started
+> cracking at about 1.5 N·m. Impacts overshoot, so if your controller enforces
+> a limit, set it near 1.2 N·m. Impacts count, so avoid slamming hard stops, and
 > on a NEMA 17 like ours limit the motor current to about 0.6 A.
 >
-> ⚠️ **Longer life testing is still to come.** 5,744 cycles is about 40
+> ⚠️ **Longer life testing is still to come.** 9,713 cycles is about 34
 > minutes of running. If you run one for a long time, please
 > [open an issue](https://github.com/robrotics/hdp30/issues) and tell us how
 > it held up. We'll credit you.
@@ -281,9 +283,9 @@ report, with plots, the method, the caveats and the raw CSVs, is at
 |---|---|---|
 | **Backlash** | about 0.03° (2 arcmin) | under 0.3° (not resolved) |
 | Torque | Held 1.49 N·m, no skips; cracks from 1.5-1.67 | Held 1.47 N·m, then ratcheted |
-| Endurance | 5,744 flex cycles at 1.0-1.2 N·m, no damage | Not tested |
-| Efficiency (static) | 47-60% | 43-55% |
-| Stiffness | 40-61 N·m/rad | 31-44 N·m/rad |
+| Endurance | 9,713 flex cycles at 1.3 N·m, no damage | Not tested |
+| Efficiency (static) | 47-60% (42-56% across three units) | 43-55% |
+| Stiffness | 40-61 N·m/rad (33-43 at low torque across four units) | 31-44 N·m/rad |
 | Creep in a 2 s hold | about 5% | about 10% |
 
 The v1.0 report is archived at
